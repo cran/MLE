@@ -11,8 +11,8 @@ The package offers functions for the maximum likelihood estimation of various un
 \tabular{lll}{
 Package: \tab MLE\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2024-07-18\cr
+Version: \tab 1.1\cr
+Date: \tab 2024-09-10\cr
 License: \tab GPL-2\cr
 }
 }

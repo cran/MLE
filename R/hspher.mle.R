@@ -15,14 +15,18 @@ hspher.mle <- function(x, distr = "vmf", ina, full = FALSE, ell = FALSE, tol = 1
      res <- Directional::sipc.mle(x, tol = tol)
    } else if ( distr == "pkbd" ) {
      res <- Directional::pkbd.mle(x, tol = tol)
+   } else if ( distr == "pkbd2" ) {
+     res <- Directional::pkbd.mle2(x, tol = tol)
    } else if ( distr == "purka" ) {
       res <- Rfast2::purka.mle(x)
    } else if ( distr == "kent" ) {
      res <- Directional::kent.mle(x)
    } else if ( distr == "esag" ) {
      res <- Directional::esag.mle(x, full = full, tol = tol)
-   } else if ( distr == "sespc" ) {
+    } else if ( distr == "sespc" ) {
      res <- Directional::sespc.mle(x, full = full, tol = tol)
+    } else if ( distr == "ESAGd" ) {
+      res <- Directional::ESAGd.mle(x, full = full)
    } else if ( distr == "wood" ) {
      res <- Directional::wood.mle(x)
    }

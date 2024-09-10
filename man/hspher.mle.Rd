@@ -17,9 +17,9 @@ hspher.mle(x, distr = "vmf", ina, full = FALSE, ell = FALSE, tol = 1e-07)
 A matrix with directional data, i.e. unit vectors.
 }
 \item{distr}{
-The distribution to fit. Spherical distributions: "iag" stands for the independent angular Gaussian distribution, "purka" is the Purkayastha distribution, and "sipc" is the spherical isotropic projected Cauchy. These are rotationally symmetric distributions. The "wood" is the Wood distribution, a bimodal distribution. The next three are elliptically symmetric distributions. The "kent" is the Kent distribution, "esag" is the elliptically symmetric angular Gaussian and the "sespc" is the spherical elliptically symmetric projected Cauchy distribution.
+The distribution to fit. Spherical distributions: "purka" is the Purkayastha distribution, and "sipc" is the spherical isotropic projected Cauchy. These are rotationally symmetric distributions. The "wood" is the Wood distribution, a bimodal distribution. The next three are elliptically symmetric distributions. The "kent" is the Kent distribution, "esag" is the elliptically symmetric angular Gaussian and the "sespc" is the spherical elliptically symmetric projected Cauchy distribution.
 
-Spherical and hyper-spherical distributions: "vmf" stands for the von Mises-Fisher distribution, "multivmf" is for the vMF with multiple groups, "acg" is the angular central Gaussian and  and the "pkbd" is the Poisson kernel based distribution. The "spcauchy" and "spcauchy2" are the spherical Cauchy (2 different methods of estimation).
+Spherical and hyper-spherical distributions: "vmf" stands for the von Mises-Fisher distribution, "multivmf" is for the vMF with multiple groups, "acg" is the angular central Gaussian and  and the "pkbd" is the Poisson kernel based distribution. The "spcauchy" and "spcauchy2" are the spherical Cauchy (2 different methods of estimation) ,"pkbd" and "pkbd2" is the Poisson-kernel based distribution, "iag" stands for the independent angular Gaussian distribution, and works for spherical and hyper-spherical data, and "ESAGd" is the generalization to the hyper-sphere.
 }
 \item{ina}{
 A numerical vector with discrete numbers starting from 1, i.e. 1, 2, 3, 4,... or a factor variable. Each number denotes a sample or group.
@@ -40,7 +40,7 @@ The tolerance value at which to terminate the iterations.
 For the von Mises-Fisher, the normalised mean is the mean direction. For the concentration parameter, a Newton-Raphson is implemented. For the angular central Gaussian distribution there is a constraint on the estimated covariance matrix; its trace is equal to the number of variables. An iterative algorithm takes place and convergence is guaranteed. Newton-Raphson for the projected normal distribution, on the sphere, is implemented as well.
 
 The "vmf" estimates the mean direction and concentration of a fitted von Mises-Fisher distribution.
-The von Mises-Fisher distribution for groups of data is also implemented. The "acg"" fits the angular central Gaussian distribution. There is a constraint on the estimated covariance matrix; its trace is equal to the number of variables. An iterative algorithm takes place and convergence is guaranteed. The "iag" implements MLE of the spherical projected normal distribution, for spherical data only. The "spcauchy" is faster than the "spcacuhy2" because it employs the Newton-Raphson algortihm. Both functions estimate the parameters of the spherical Cauchy distribution, for any dimension. Despite the name sounds confusing, it is implemented for arbitrary dimensions, not only the sphere. The function employs a combination of the fixed points iteration algorithm and the Brent algorithm. The "pkbd" estimates the parameters of the Poisson kernel based distribution (PKBD), for any dimension. The "sipc" implements MLE of the spherical independent projected Cauchy distribution, for spherical data only.
+The von Mises-Fisher distribution for groups of data is also implemented. The "acg"" fits the angular central Gaussian distribution. There is a constraint on the estimated covariance matrix; its trace is equal to the number of variables. An iterative algorithm takes place and convergence is guaranteed. The "iag" implements MLE of the (hyper-)spherical projected normal distribution. The "esag" is for spherical data, while "ESAGd" is for hyper-spherical data. The "spcauchy" is faster than the "spcacuhy2" because it employs the Newton-Raphson algortihm, but for high dimensions the latter is preferred. Both functions estimate the parameters of the spherical Cauchy distribution, for any dimension. Despite the name sounds confusing, it is implemented for arbitrary dimensions, not only the sphere. The function employs a combination of the fixed points iteration algorithm and the Brent algorithm. The "pkbd" is faster than "pkbd2" beacuse it employs the Newton-Raphson algorithm, but for high dimensions the latter is preferred. Both estimate the parameters of the Poisson kernel based distribution (PKBD), for any dimension. The "sipc" implements MLE of the spherical independent projected Cauchy distribution, for spherical data only.
 }
 
 \value{
@@ -207,8 +207,12 @@ Computational Statistics, 27(1): 177--190.
 Tyler D. E. (1987). Statistical analysis for the angular central Gaussian distribution on the sphere.
 Biometrika 74(3): 579-589.
 
-Paine P.J., Preston S.P., Tsagris M and Wood A.T.A. (2018). An Elliptically Symmetric Angular Gaussian Distribution.
-Statistics and Computing, 28, 689--697.
+Zehao Yu and Xianzheng Huang (2024). A new parameterization for elliptically symmetric angular Gaussian distributions of arbitrary dimension. Electronic Journal of Statististics, 18(1): 301--334.
+
+Tsagris M. (2024). Directional data analysis using the spherical Cauchy and the Poisson-kernel based distribution.
+https://arxiv.org/pdf/2409.03292
+
+Paine P.J., Preston S.P., Tsagris M and Wood A.T.A. (2018). An Elliptically Symmetric Angular Gaussian Distribution. Statistics and Computing, 28, 689--697.
 
 Tsagris M. and Alzeley O. (2023). Circular and spherical projected Cauchy distributions:
 A Novel Framework for Circular and Directional Data Modeling.
