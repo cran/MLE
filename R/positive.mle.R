@@ -49,8 +49,49 @@ positive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100) {
     res <- Rfast2::halfcauchy.mle(x, tol = tol )
   } else if ( distr == "powerlaw" ) {
     res <- Rfast2::powerlaw.mle(x)
+  } else if (distr == "wp" ) {
+    res <- .wp.mle(x)
+  } else if (distr == "be" ) {
+    res <- .be.mle(x)
   }
   res
+}
+
+
+.wp.mle <- function(x) {
+
+  wp <- function(vec, x, slx, n) {
+    alpha <- exp( vec[1] )
+    b <- exp( vec[2] )
+    lambda <- exp( vec[3] )
+    logca <- log(alpha * b * lambda) - lambda - log(1 - exp(- lambda) )
+     -n * logca + b * sum( x^alpha ) - (alpha - 1) * slx - lambda * sum( exp(- b * ( x^alpha ) ) )
+  }
+
+  n <- length(x)  ;  slx <- sum( log( x ) )
+  f <- optim( par = c(1, 1, 1), fn = wp, x = x, slx = slx, n = n, control = list(maxit = 5000) )
+  f <- optim( par = f$par, fn = wp, x = x, n = n, slx = slx, control = list(maxit = 5000) )
+  param <- exp( f$par )
+  names(param) <- c("alpha", "beta", "lambda")
+  list(param = param, loglik = -f$value)
+}
+
+
+.be.mle <- function(x) {
+
+  be <- function(vec, x, sx, n) {
+    alpha <- exp( vec[1] )
+    b <- exp( vec[2] )
+    lambda <- exp( vec[3] )
+    -n * log( lambda ) + n * lbeta( b, alpha ) + alpha * lambda * sx - (b - 1) * sum( log(1 - exp(- lambda * x ) ) )
+  }
+
+  n <- length(x)  ;  sx <- sum(x)
+  f <- optim( par = c(1, 1, 1), fn = be, x = x, sx = sx, n = n, control = list(maxit = 5000) )
+  f <- optim( par = f$par, fn = be, x = x, n = n, sx = sx, control = list(maxit = 5000) )
+  param <- exp( f$par )
+  names(param) <- c("alpha", "beta", "lambda")
+  list(param = param, loglik = -f$value)
 }
 
 

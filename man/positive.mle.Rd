@@ -16,7 +16,7 @@ positive.mle(x, distr = "gamma", tol = 1e-07, maxiters = 100)
 A vector with positive valued data (zeros are not allowed).
 }
 \item{distr}{
-The distribution to fit. "gamma" stands for the gamma distribution, "chisq" for the \eqn{\chi^2} distribution, "weibull" for the Weibull, "lomax" for the Lomax, "foldnorm" for the folded normal, "betaprime" for the beta-prime distribution, "lognorm" for the log-normal, "logcauchy" for the log-Cauchy, "loglogictic" for the log-logistic distribution. "halfnorm" for the half-normal, "invgauss" for the inverse Gaussian, "pareto" for the Pareto distribution, "exp" for the exponential distribution, "exp2" I do not remember, "maxboltz" for the Maxwell-Boltzman distribution, "rayleigh" is the Rayleigh distribution, "lindley" is the Lindley distribution, "halfcauchy" is the half-Cauchy distribution and "powerlaw" is the power law distribution. The "normlog" is simply the normal distribution where all values are positive. Note, this is not log-normal. It is the normal with a log link. Similarly to the inverse gaussian distribution where the mean is an exponentiated. This comes from the GLM theory. The "epois" stands for the exponential-Poisson, the "gep" for the generalized exponential-Poisson and the "pe" for the Poisson-exponential distribution, the "zigamma" and "ziweibull" stand for the zero inflated gamma and Weibull distributions, respectively, and they accept zeros.
+The distribution to fit. "gamma" stands for the gamma distribution, "chisq" for the \eqn{\chi^2} distribution, "weibull" for the Weibull, "lomax" for the Lomax, "foldnorm" for the folded normal, "betaprime" for the beta-prime distribution, "lognorm" for the log-normal, "logcauchy" for the log-Cauchy, "loglogictic" for the log-logistic distribution. "halfnorm" for the half-normal, "invgauss" for the inverse Gaussian, "pareto" for the Pareto distribution, "exp" for the exponential distribution, "exp2" I do not remember, "maxboltz" for the Maxwell-Boltzman distribution, "rayleigh" is the Rayleigh distribution, "lindley" is the Lindley distribution, "halfcauchy" is the half-Cauchy distribution and "powerlaw" is the power law distribution. The "normlog" is simply the normal distribution where all values are positive. Note, this is not log-normal. It is the normal with a log link. Similarly to the inverse gaussian distribution where the mean is an exponentiated. This comes from the GLM theory. The "epois" stands for the exponential-Poisson, the "gep" for the generalized exponential-Poisson and the "pe" for the Poisson-exponential distribution. The "wp" for the Weibull Poisson, the "be" for the beta exponential the "zigamma" and "ziweibull" stand for the zero inflated gamma and Weibull distributions, respectively, and they accept zeros.
 }
 \item{tol}{
 The tolerance level up to which the maximisation stops; set to 1e-07 by default.
@@ -66,6 +66,10 @@ Communications in Statistics--Simulation and Computation, 49(4): 1024--1043.
 Rodrigues G. C., Louzada F. and Ramos P. L. (2018). Poisson-exponential distribution: different methods of estimation. Journal of Applied Statistics, 45(1): 128--144.
 
 Taylor S. and Pollard K. (2009). Hypothesis Tests for Point-Mass Mixture Data with Application to Omics Data with Many Zero Values. Statistical Applications in Genetics and Molecular Biology, 8(1): 1--43.
+
+Percontini A., Blas B. and Cordeiro G. M. (2013). The beta Weibull Poisson distribution. Chilean Journal of Statistics, 4(2): 3--26.
+
+Mahmoudi E., Zamani H. and Meshkat R. (2018). Poisson-beta exponential distribution: properties and applications. Journal of Statistical Research of Iran, 15(1): 119--146.
 
 You can also check the relevant wikipedia pages for these distributions.
 }

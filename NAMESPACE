@@ -40,5 +40,7 @@ importFrom("Rfast2", censweibull.mle, censpois.mle, colcensweibull.mle,
 
 importFrom("skellam", skellam.mle)
 
+importFrom("stats", optim)
+
 exportPattern("^[[:alpha:]]+")
 exportPattern("^[^\\.]")
