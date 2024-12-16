@@ -17,7 +17,11 @@ disc.mle(x, distr = "poisson", N = NULL, type = 1, tol = 1e-07)
 A vector with discrete valued data.
 }
 \item{distr}{
-The distribution to fit, "poisson" stands for the Poisson, "zip" for the zero-inflated Poisson, "ztp" for the zero-truncated Poisson, "negbin" for the negative binomial, "binom" for the binomial, "borel" for the Borel distribution, "geom" for the geometric, "logseries" for the log-series distribution, "betageom" for the beta-geometric, "betabinom" for the beta-binomial distribution and "skellam" for the Skellam distribution, "gp" for the generalised Poisson distribution and "gammapois" for the gamma-Poisson distribution.
+The distribution to fit, "poisson" stands for the Poisson, "zip" for the zero-inflated Poisson,
+"ztp" for the zero-truncated Poisson, "negbin" for the negative binomial, "binom" for the binomial,
+"borel" for the Borel distribution, "geom" for the geometric, "logseries" for the log-series distribution, "betageom" for the beta-geometric, "betabinom" for the beta-binomial distribution,
+"skellam" for the Skellam distribution, "gp" for the generalised Poisson distribution,
+"gammapois" for the gamma-Poisson distribution, "cc" for the Cacoullos-Cauchy distribution, "cc0" for the Cacoullos-Cauchy distribution with zero location, "com-pois" for the Conway-Maxwell Poisson (COM-Poisson), and "zicom-pois" for the zero inflated COM-Poisson distribution.
 }
 \item{type}{
 This argument is for the negative binomial and the geometric distribution.
@@ -64,8 +68,9 @@ Distributions (2nd ed.). Wiley.
 Skellam J. G. (1946) The frequency distribution of the difference between two Poisson variates belonging to different populations.
 Journal of the Royal Statistical Society, series A 109/3, 26.
 
-Nikoloulopoulos A.K. and Karlis D. (2008). On modeling count data: a comparison of some well-known discrete distributions.
-Journal of Statistical Computation and Simulation, 78(3): 437--457.
+Nikoloulopoulos A.K. and Karlis D. (2008). On modeling count data: a comparison of some well-known discrete distributions. Journal of Statistical Computation and Simulation, 78(3): 437--457.
+
+Papadatos N. (2022). The characteristic function of the discrete Cauchy distribution In Memory of T. Cacoullos. Journal of Statistical Theory and Practice, 16(3): 47.
 }
 
 \author{

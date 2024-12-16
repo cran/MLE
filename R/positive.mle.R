@@ -53,6 +53,8 @@ positive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100) {
     res <- .wp.mle(x)
   } else if (distr == "be" ) {
     res <- .be.mle(x)
+  } else if (distr == "frechet2" ) {
+    res <- .fng.mle(x)
   }
   res
 }
@@ -92,6 +94,24 @@ positive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100) {
   param <- exp( f$par )
   names(param) <- c("alpha", "beta", "lambda")
   list(param = param, loglik = -f$value)
+}
+
+
+.fng.mle <- function(x) {
+
+  ##- ( n * log( gamma ) - n * log( b ) - ( gamma + 1 ) * sum( log( x / b ) )  -
+  ##( ( 1 / b ) ^ ( - gamma ) ) * sum( x ^ ( - gamma ) ) )
+  fng <- function(vec, x, slx, n) {
+    b <- exp( vec[1] )
+    gamma <- exp( vec[2] )
+    - n * log( gamma ) + n * log( b ) + ( gamma + 1 ) * ( slx - n * vec[1] ) +
+      ( ( 1 / b ) ^ ( - gamma ) ) * sum( x ^ ( - gamma ) )
+  }
+
+  mod <- optim( par = c(1, 1), fng, x = x, slx = sum( log(x) ), n = length(x) )
+  param <- exp(mod$par)
+  names(param) <- c("beta", "gamma")
+  list(param = param, loglik = -mod$value)
 }
 
 
