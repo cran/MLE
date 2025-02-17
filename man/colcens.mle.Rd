@@ -17,7 +17,7 @@ colcens.mle(x, distr = "censweibull", di, tol = 1e-07, parallel = FALSE, cores =
 A vector with positive valued data and zero values. If there are no zero values, a simple normal model is fitted in the end.
 }
 \item{distr}{
-The distribution to fit. "censweibull" for the censored Weibull and "censpois" for the left censored Poisson. For the "censpois" the lowest value in x is taken as the censored point and values below that number are considered to be censored.
+The distribution to fit. "censweibull" for the censored Weibull, "censpois" for the left censored Poisson and "tobit for the Tobit model. For the "censpois" the lowest value in x is taken as the censored point and values below that number are considered to be censored.
 }
 \item{di}{
 A vector of 0s (censored) and 1s (not censored) values.
@@ -35,12 +35,10 @@ In case you set parallel = TRUE, then you need to specify the number of cores.
 
 \details{
 For each column, the same distribution is fitted and its parameters and log-likelihood are computed.
-
-
 }
 
 \value{
-A matrix with two or three columns. The first one or the first two contain the parameter(s) of the 
+A matrix with two, three or four columns. The first one or the first two contain the parameter(s) of the
 distribution and the second or third column the relevant log-likelihood.
 }
 
@@ -49,15 +47,15 @@ Tobin James (1958). Estimation of relationships for limited dependent variables.
 
 https://en.wikipedia.org/wiki/Tobit_model
 
-Fritz Scholz (1996). Maximum Likelihood Estimation for Type I Censored Weibull Data Including Covariates. 
+Fritz Scholz (1996). Maximum Likelihood Estimation for Type I Censored Weibull Data Including Covariates.
 Technical report. ISSTECH-96-022, Boeing Information & Support Services, P.O. Box 24346, MS-7L-22.
 
 }
 
 \author{
-Michail Tsagris and Sofia Piperaki.
+Michail Tsagris, Sofia Piperaki and Nikolaos Kontemeniotis.
 
-R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and Sofia Piperaki  \email{sofiapip23@gmail.com}.
+R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and Sofia Piperaki  \email{sofiapip23@gmail.com} and Nikolaos Kontemeniotis \email{kontemeniotisn@gmail.com}.
 }
 
 \seealso{

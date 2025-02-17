@@ -18,7 +18,7 @@ prop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 50) {
   } else if ( distr == "cbern" ) {
     res <- Rfast2::cbern.mle(x, tol = tol)
   } else if ( distr == "sp" ) {
-    res <- Rfast2::sp.mle(x, tol = tol)
+    res <- Rfast2::sp.mle(x)
   }
   res
 }

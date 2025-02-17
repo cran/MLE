@@ -6,7 +6,7 @@ circ.mle <- function(x, rads = FALSE, distr = "vm", N = 2, ina, tol = 1e-07, max
   } else if ( distr == "spml" ) {
     res <- Rfast::spml.mle(x, tol = tol, maxiters = maxiters)
   } else if ( distr == "purka" ) {
-    res <- Rfast2::purka.mle(x)
+    res <- Rfast2::purka.mle(x, tol = tol)
   } else if ( distr == "wrapcauchy" ) {
     res <- Rfast::wrapcauchy.mle(x, tol = tol)
   } else if ( distr == "circexp" ) {

@@ -105,8 +105,9 @@ Jammalamadaka S. R. and Kozubowski T. J. (2003). A new family of circular models
 The wrapped Laplace distributions.
 Advances and Applications in Statistics, 3(1), 77--103.
 
-Tsagris M. and Alzeley O. (2023). Circular and spherical projected Cauchy distributions:
-A Novel Framework for Circular and Directional Data Modeling.
+Tsagris M. and Alzeley O. (2025). Circular and spherical projected Cauchy distributions:
+A Novel Framework for Circular and Directional Data Modelling.
+Australian & New Zealand Journal of Statistics (accepted for publication).
 https://arxiv.org/pdf/2302.02468.pdf
 
 Barnett M. J. and Kingston R. L. (2024). A note on the Hendrickson-Lattman phase probability
@@ -135,8 +136,7 @@ R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and 
 }
 
 \examples{
-y <- rcauchy(100, 3, 1)
-x <- y %% (2 * pi)
+x <- runif(100, 0, 2*pi)
 res <- circ.mle(x, distr = "wrapcauchy")
 }
 

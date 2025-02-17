@@ -50,7 +50,10 @@ The vector of the parameters.
 }
 
 \references{
-Johnson, Norman L. Kemp, Adrianne W. Kotz, Samuel (2005). Univariate Discrete Distributions (third edition). Hoboken, NJ: Wiley-Interscience.
+N.L. Johnson, S. Kotz and N. Balakrishnan (1994). Continuous Univariate Distributions, Volume 1 (2nd Edition).
+
+N.L. Johnson, S. Kotz a nd N. Balakrishnan (1970). Distributions in statistics: continuous univariate
+distributions, Volume 2.
 
 https://en.wikipedia.org/wiki/Wigner_semicircle_distribution
 

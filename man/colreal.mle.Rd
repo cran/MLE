@@ -8,7 +8,7 @@ Column-wise MLE of continuous univariate distributions defined on the real line.
 }
 
 \usage{
-colreal.mle(x, distr = "normal", tol = 1e-07, maxiters = 100, parallel = FALSE)
+colreal.mle(x, distr = "normal", v = 5, tol = 1e-07, maxiters = 100, parallel = FALSE)
 }
 
 \arguments{
@@ -16,7 +16,10 @@ colreal.mle(x, distr = "normal", tol = 1e-07, maxiters = 100, parallel = FALSE)
 A numerical vector with data.
 }
 \item{distr}{
-The distribution to fit, "normal" stands for the normal distribution, "cauchy" for the Cauchy,  "laplace" is the Laplace distribution.
+The distribution to fit, "normal" stands for the normal distribution, "gumbel" for the Gumbel, "cauchy" for the Cauchy, "logistic" for the logistic distribution, "ct" for the (central) t distribution, "t" for the (non-central) t distribution, "wigner" is the Wigner semicircle distribution and "laplace" is the Laplace distribution. "cauchy0" and "gnormal0" are the Cauchy and generalised normal distributions, respectively, with zero location. The generalised normal distribution is also known as the exponential power distribution or the generalized error distribution.
+}
+\item{v}{
+The degrees of freedom of the t distribution.
 }
 \item{tol}{
 The tolerance level to stop the iterative process of finding the MLEs.
@@ -42,19 +45,25 @@ and the second columns contains the log-likelihood values.
 }
 
 \references{
-Johnson, Norman L. Kemp, Adrianne W. Kotz, Samuel (2005). Univariate Discrete Distributions (third edition). Hoboken, NJ: Wiley-Interscience.
+N.L. Johnson, S. Kotz and N. Balakrishnan (1994). Continuous Univariate Distributions, Volume 1 (2nd Edition).
+
+N.L. Johnson, S. Kotz a nd N. Balakrishnan (1970). Distributions in statistics: continuous univariate
+distributions, Volume 2.
 
 https://en.wikipedia.org/wiki/Wigner_semicircle_distribution
+
+Do M.N. and Vetterli M. (2002). Wavelet-based Texture Retrieval Using Generalised Gaussian Density
+and Kullback-Leibler Distance. Transaction on Image Processing. 11(2): 146--158.
 }
 
 \author{
-Michail Tsagris and Sofia Piperaki.
+Michail Tsagris, Sofia Piperaki and Nikolaos Kontemeniotis.
 
-R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and Sofia Piperaki  \email{sofiapip23@gmail.com}.
+R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr}, Sofia Piperaki  \email{sofiapip23@gmail.com} and Nikolaos Kontemeniotis \email{kontemeniotisn@gmail.com}.
 }
 
 \seealso{
-\code{ \link{positive.mle}, \link{circ.mle}, \link{disc.mle}
+\code{ \link{real.mle}, \link{colpositive.mle}, \link{colcirc.mle}, \link{coldisc.mle}
 }
 }
 

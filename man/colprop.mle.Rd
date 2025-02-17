@@ -17,7 +17,7 @@ colprop.mle(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel = FALSE)
 A numerical vector with proportions, i.e. numbers in (0, 1) (zeros and ones are not allowed).
 }
 \item{distr}{
-The distribution to fit. "beta" stands for the beta distribution, "logitnorm" is the logistic normal, "unitweibull" is the unit-Weibull and the "sp" is the standard power distribution.
+The distribution to fit. "beta" stands for the beta distribution, "logitnorm" is the logistic normal, "unitweibull" is the unit-Weibull and the "sp" is the standard power distribution, "ibeta" is the inflated beta, (0-inflated or 1-inflated, depending on the data), "hsecant01" stands for the hyper-secant, "kumar" is the Kumaraswamy, "simplex" is the simplex distribution, "zil" is the zero inflated logistic normal, and "cbern" is the continuous Bernoulli distribution.
 }
 \item{tol}{
 The tolerance level up to which the maximisation stops.
@@ -47,15 +47,26 @@ N.L. Johnson, S. Kotz and N. Balakrishnan (1994). Continuous Univariate Distribu
 
 N.L. Johnson, S. Kotz and N. Balakrishnan (1970). Distributions in statistics: continuous univariate distributions, Volume 2.
 
+Kumaraswamy P. (1980). A generalized probability density function for double-bounded
+random processes. Journal of Hydrology 46(1-2): 79--88.
+
+Jones M.C. (2009). Kumaraswamy's distribution: A beta-type distribution with some
+tractability advantages. Statistical Methodology, 6(1): 70--81.
+
 J. Mazucheli, A. F. B. Menezes, L. B. Fernandes, R. P. de Oliveira and M. E. Ghitany (2020).
 The unit-Weibull distribution as an alternative to the Kumaraswamy distribution for the modeling of quantiles conditional on covariates. Journal of Applied Statistics, 47(6): 954--974.
+
+Leemis L.M. and McQueston J.T. (2008). Univariate Distribution Relationships.
+The American Statistician, 62(1): 45--53.
+
+You can also check the relevant wikipedia pages.
 }
 
 
 \author{
-Michail Tsagris and Sofia Piperaki.
+Michail Tsagris, Sofia Piperaki and Rafail Vargiakakis.
 
-R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and Sofia Piperaki  \email{sofiapip23@gmail.com}.
+R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr}, Sofia Piperaki  \email{sofiapip23@gmail.com} and Rafail Vargiakakis \email{rafailvargiakakis@gmail.com}.
 }
 
 %\note{

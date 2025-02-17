@@ -209,13 +209,15 @@ Biometrika 74(3): 579-589.
 
 Zehao Yu and Xianzheng Huang (2024). A new parameterization for elliptically symmetric angular Gaussian distributions of arbitrary dimension. Electronic Journal of Statististics, 18(1): 301--334.
 
-Tsagris M. (2024). Directional data analysis using the spherical Cauchy and the Poisson-kernel based distribution.
+Tsagris M. (2024). Directional data analysis: spherical Cauchy or the Poisson-kernel based distribution?.
+Statistics and Computing (accepted for publication).
 https://arxiv.org/pdf/2409.03292
 
-Paine P.J., Preston S.P., Tsagris M and Wood A.T.A. (2018). An Elliptically Symmetric Angular Gaussian Distribution. Statistics and Computing, 28, 689--697.
+Paine P.J., Preston S.P., Tsagris M. and Wood A.T.A. (2018). An Elliptically Symmetric Angular Gaussian Distribution. Statistics and Computing, 28, 689--697.
 
-Tsagris M. and Alzeley O. (2023). Circular and spherical projected Cauchy distributions:
-A Novel Framework for Circular and Directional Data Modeling.
+Tsagris M. and Alzeley O. (2025). Circular and spherical projected Cauchy distributions:
+A Novel Framework for Circular and Directional Data Modelling.
+Australian & New Zealand Journal of Statistics (accepted for publication).
 https://arxiv.org/pdf/2302.02468.pdf
 
 Kato S. and McCullagh P. (2020). Some properties of a Cauchy family on the sphere derived from the

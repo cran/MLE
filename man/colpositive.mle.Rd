@@ -16,7 +16,7 @@ colpositive.mle(x, distr = "gamma", tol = 1e-07, maxiters = 100, parallel = FALS
 A matrix with positive valued data (zeros are not allowed).
 }
 \item{distr}{
-The distribution to fit. "gamma" stands for the gamma distribution, "weibull" for the Weibull, "pareto" for the Pareto distribution, "exp" for the exponential distribution, "exp2" I do not remember, "maxboltz" for the Maxwell-Boltzman distribution, "rayleigh" for the Rayleigh distribution and "lindley" for the Lindley distribution, "lognorm" for the log-normal distribution. "halfnorm" for the half-normal, "invgauss" for the inverse Gaussian. The "normlog" is simply the normal distribution where all values are positive. Note, this is not log-normal. It is the normal with a log link. Similarly to the inverse gaussian distribution where the mean is an exponentiated. This comes from the GLM theory. The "powerlaw" stands for the power law distribution.
+The distribution to fit. "gamma" stands for the gamma distribution, "chisq" for the \eqn{\chi^2} distribution, "weibull" for the Weibull, "lomax" for the Lomax, "foldnorm" for the folded normal, "betaprime" for the beta-prime distribution, "lognorm" for the log-normal, "logcauchy" for the log-Cauchy, "loglogictic" for the log-logistic distribution. "halfnorm" for the half-normal, "invgauss" for the inverse Gaussian, "pareto" for the Pareto distribution, "exp" for the exponential distribution, "exp2" I do not remember, "maxboltz" for the Maxwell-Boltzman distribution, "rayleigh" is the Rayleigh distribution, "lindley" is the Lindley distribution, "halfcauchy" is the half-Cauchy distribution and "powerlaw" is the power law distribution. The "normlog" is simply the normal distribution where all values are positive. Note, this is not log-normal. It is the normal with a log link. Similarly to the inverse gaussian distribution where the mean is an exponentiated. This comes from the GLM theory. The "epois" stands for the exponential-Poisson, the "gep" for the generalized exponential-Poisson and the "pe" for the Poisson-exponential distribution. The "wp" stands for the Weibull Poisson, the "be" for the beta exponential, the "frechet2" for the two-parameter Frechet, for the  the "zigamma" and "ziweibull" stand for the zero inflated gamma and Weibull distributions, respectively, and they accept zeros.
 }
 \item{tol}{
 The tolerance level up to which the maximisation stops; set to 1e-07 by default.
@@ -56,9 +56,9 @@ You can also check the relevant wikipedia pages for these distributions.
 }
 
 \author{
-Michail Tsagris and Sofia Piperaki.
+Michail Tsagris, Sofia Piperaki and Rafail Vargiakakis.
 
-R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr} and Sofia Piperaki  \email{sofiapip23@gmail.com}.
+R implementation and documentation: Michail Tsagris \email{mtsagris@uoc.gr}, Sofia Piperaki  \email{sofiapip23@gmail.com} and Rafail Vargiakakis \email{rafailvargiakakis@gmail.com}.
 }
 
 \seealso{

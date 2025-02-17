@@ -23,13 +23,13 @@ The distribution to fit, "poisson" stands for the Poisson, "zip" for the zero-in
 "skellam" for the Skellam distribution, "gp" for the generalised Poisson distribution,
 "gammapois" for the gamma-Poisson distribution, "cc" for the Cacoullos-Cauchy distribution, "cc0" for the Cacoullos-Cauchy distribution with zero location, "com-pois" for the Conway-Maxwell Poisson (COM-Poisson), and "zicom-pois" for the zero inflated COM-Poisson distribution.
 }
+\item{N}{
+This is for the binomial distribution only, specifying the total number of successes. If NULL, it is sestimated by the data. It can also be a vector of successes.
+}
 \item{type}{
 This argument is for the negative binomial and the geometric distribution.
 In the negative binomial you can choose which way your prefer. Type 1 is for smal sample sizes, whereas
 type 2 is for larger ones as is faster. For the geometric it is related to its two forms. Type 1 refers to the case where the minimum is zero and type 2 for the case of the minimum being 1.
-}
-\item{N}{
-This is for the binomial distribution only, specifying the total number of successes. If NULL, it is sestimated by the data. It can also be a vector of successes.
 }
 \item{tol}{
 The tolerance level up to which the maximisation stops set to 1e-07 by default.

@@ -20,7 +20,7 @@ disc.mle <- function(x, distr = "poisson", N = NULL, type = 1, tol = 1e-07) {
   } else if ( distr == "betabinom" ) {
     res <- Rfast::betabinom.mle(x, N = N, tol = tol)
   } else if ( distr == "gammapois" ) {
-    res <- Rfast2::gammapois.mle(x)
+    res <- Rfast2::gammapois.mle(x, tol = tol)
   } else if ( distr == "skellam" ) {
     res <- skellam::skellam.mle(x)
   } else if ( distr == "gp" ) {
