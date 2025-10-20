@@ -14,14 +14,24 @@ real.mle <- function(x, distr = "normal", v = 5, tol = 1e-07) {
   } else if ( distr == "wigner" ) {
     res <- Rfast::wigner.mle(x, tol = tol)
   } else if ( distr == "laplace" ) {
-    res <- Rfast::laplace.mle(x, tol = tol)
+    res <- Rfast::laplace.mle(x)
   } else if ( distr == "cauchy0") {
     res <- Rfast2::cauchy0.mle(x, tol = tol)
   } else if ( distr == "gnormal0" ) {
     res <- Rfast2::gnormal0.mle(x, tol = tol)
+  } else if ( distr == "logisbeta" ) {
+    res <- .logisbeta.mle(x, tol = tol)
   }
   res
  }
 
 
-
+.logisbeta.mle <- function(x, tol = 1e-7) {
+  n <- length(x)
+  ex <- exp(-x)
+  y <- 1 / ( 1 + ex )
+  par <- Rfast::beta.mle(y, tol = tol)$param
+  a <- par[1]  ;  b <- par[2]
+  loglik <-  - n * lbeta(a, b) - b * sum(x) - (a + b) * sum( log1p(ex) )
+  list(loglik = loglik, param = par)
+}

@@ -2,7 +2,7 @@ colreal.mle <- function(x, distr = "normal", v = 5, tol = 1e-07, maxiters = 100,
   if ( distr == "normal" ) {
     res <- Rfast::colnormal.mle(x)
   } else if ( distr == "laplace" ) {
-    res <- Rfast::collaplace.mle(x, tol = tol)
+    res <- Rfast::collaplace.mle(x)
   } else if ( distr == "cauchy" ) {
     res <- Rfast2::colcauchy.mle(x, tol = tol, maxiters = maxiters, parallel = parallel)
   } else if ( distr == "gumbel" ) {
@@ -19,6 +19,8 @@ colreal.mle <- function(x, distr = "normal", v = 5, tol = 1e-07, maxiters = 100,
     res <- .colcauchy0.mle(x, tol)
   } else if ( distr == 'gnormal0' ) {
     res <- .colgnormal0.mle(x, tol)
+  } else if ( distr == "logisbeta" ) {
+    res <- .collogisbeta.mle(x, tol = tol, maxiters = maxiters, parallel = parallel)
   }
   res
 }
@@ -85,6 +87,16 @@ colreal.mle <- function(x, distr = "normal", v = 5, tol = 1e-07, maxiters = 100,
   res <- matrix(nrow = n, ncol = 4)
   for (i in 1:n)  res[i, ] <- unlist( Rfast2::gnormal0.mle(x[, i], tol) )
   colnames(res) <- c('iters', 'loglik', 'alpha','beta')
+  res
+}
+
+.collogisbeta.mle <- function(x, tol = 1e-7, maxiters = 100, parallel = FALSE) {
+  n <- dim(x)[1]
+  ex <- exp(-x)
+  y <- 1 / ( 1 + ex )
+  res <- Rfast2::colbeta.mle(y, tol = tol, maxiters = maxiters, parallel = parallel)
+  a <- res[, 1]  ;  b <- res[, 2]
+  res[, 3] <-  - n * lbeta(a, b) - b * Rfast::colsums(x) - (a + b) * Rfast::colsums( log1p(ex) )
   res
 }
 

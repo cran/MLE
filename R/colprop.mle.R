@@ -1,6 +1,6 @@
 colprop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel = FALSE ){
   if ( distr == "beta" ) {
-    res <- Rfast2::colbeta.mle(x, tol = tol)
+    res <- Rfast2::colbeta.mle(x, tol = tol, maxiters = maxiters, parallel = parallel)
   } else if ( distr == "logitnorm" ) {
     res <- Rfast2::collogitnorm.mle(x)
   } else if ( distr == "unitweibull" ) {
@@ -20,6 +20,7 @@ colprop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel
   } else if ( distr == "cbern" ) {
     res <- .colcbern.mle(x, tol = tol)
   }
+
   res
 }
 
@@ -65,12 +66,12 @@ colprop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel
 }
 
 .colzil.mle <- function(x) {
-  res <- matrix(NA, dim(x)[2], 3)
+  res <- matrix(NA, dim(x)[2], 4)
   for ( i in 1:dim(x)[2] ) {
     a <- Rfast2::zil.mle(x[, i])
-    res[i, ] <- a$param
+    res[i, ] <- c(a$param, a$loglik)
   }
-  colnames(res) <- c("prop1", "mean", "unbiased variance")
+  colnames(res) <- c("prop1", "mean", "unbiased variance", "loglik")
   res
 }
 
@@ -83,6 +84,7 @@ colprop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel
   colnames(res) <- c("lam", "loglik")
   res
 }
+
 
 
 
