@@ -15,6 +15,7 @@ importFrom("Directional", spcauchy.mle, spcauchy.mle2, sipc.mle, pkbd.mle,
 importFrom("geppe", epois.mle, gep.mle, pe.mle)
 importFrom("gp", gp.mle)
 importFrom("MN", mn.mle)
+importFrom("foldedt", halft.mle, halft1.mle, foldedt.mle)
 
 importFrom("Rfast", tobit.mle, vm.mle, spml.mle, wrapcauchy.mle, colvm.mle,
            colpoisson.mle, colgeom.mle, colgammamle, colweibull.mle,
@@ -40,7 +41,7 @@ importFrom("Rfast2", censweibull.mle, censpois.mle, colcensweibull.mle,
            gnormal0.mle, trunccauchy.mle, truncexpmle, kumar.mle, simplex.mle,
            zil.mle, unitweibull.mle, cbern.mle, sp.mle)
 
-importFrom("stats", optim)
+importFrom("stats", optim, optimise)
 
 exportPattern("^[[:alpha:]]+")
 exportPattern("^[^\\.]")

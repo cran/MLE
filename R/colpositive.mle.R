@@ -55,6 +55,12 @@ colpositive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100, par
     res <- .colbe.mle(x)
   } else if ( distr == "frechet2" ) {
     res <- .colfng.mle(x)
+  } else if (distr == "halft" ) {
+    res <- .colhalft.mle(x)
+  } else if (distr == "halft1" ) {
+    res <- .colhalft1.mle(x)
+  } else if (distr == "foldedt" ) {
+    res <- .colfoldedt.mle(x)
   }
   res
 }
@@ -158,4 +164,24 @@ colpositive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100, par
   res
 }
 
+.colhalft1.mle <- function(x) {
+  res <- matrix(NA, dim(x)[2], 3)
+  for (i in 1:dim(x)[2] )  res[i, ] <- unlist( foldedt::halft1.mle(x[, i]) )
+  colnames(res) <- c("iters", "nu","loglik")
+  res
+}
+
+.colhalft.mle <- function(x) {
+  res <- matrix(NA, dim(x)[2], 3)
+  for (i in 1:dim(x)[2] )  res[i, ] <- unlist( foldedt::halft.mle(x[, i]) )
+  colnames(res) <- c("nu", "scatter","loglik")
+  res
+}
+
+.colfoldedt.mle <- function(x) {
+  res <- matrix(NA, dim(x)[2], 4)
+  for (i in 1:dim(x)[2] )  res[i, ] <- unlist( foldedt::foldedt.mle(x[, i]) )
+  colnames(res) <- c("location", "scatter","nu", "loglik")
+  res
+}
 

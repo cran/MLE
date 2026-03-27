@@ -19,9 +19,18 @@ prop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 50) {
     res <- Rfast2::cbern.mle(x, tol = tol)
   } else if ( distr == "sp" ) {
     res <- Rfast2::sp.mle(x)
+  } else if ( distr == "garcsine" ) {
+    res <- .garcsine.mle(x)
   }
 
   res
 }
 
-
+.garcsine.mle <- function(x) {
+  n <- length(x)
+  slx <- sum( log(x) )
+  slx1 <- sum( log(1 - x) )
+  fun <- function(a, n, slx, slx1)  n * log( sin(a * pi) ) - a * slx + (a - 1) * slx1
+  mod <- optimise(fun, c(0, 1), n = n, slx = slx, slx1 = slx1, maximum = TRUE, tol = 1e-7)
+  list(alpha = mod$maximum, loglik = mod$objective - n * log(pi))
+}

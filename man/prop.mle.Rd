@@ -18,7 +18,11 @@ A numerical vector with proportions, i.e. numbers in (0, 1) (zeros and ones are 
 }
 \item{distr}{
 The distribution to fit. "beta" stands for the beta distribution, "logitnorm" is the logistic normal,
-"unitweibull" is the unit-Weibull and the "sp" is the standard power distribution, "ibeta" is the inflated beta, (0-inflated or 1-inflated, depending on the data), "hsecant01" stands for the hyper-secant, "kumar" is the Kumaraswamy, "simplex" is the simplex distribution, "zil" is the zero inflated logistic normal, "cbern" is the continuous Bernoulli distribution and "logisbeta" is the logistic-beta distribution.
+"unitweibull" is the unit-Weibull and the "sp" is the standard power distribution, "ibeta" is the
+inflated beta, (0-inflated or 1-inflated, depending on the data), "hsecant01" stands for the hyper-secant,
+"kumar" is the Kumaraswamy, "simplex" is the simplex distribution, "zil" is the zero inflated logistic normal,
+"cbern" is the continuous Bernoulli distribution and "logisbeta" is the logistic-beta distribution, and
+"garcsine" is the generalised arcsine distribution.
 }
 \item{tol}{
 The tolerance level up to which the maximisation stops.

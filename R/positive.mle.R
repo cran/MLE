@@ -49,6 +49,12 @@ positive.mle <- function(x, distr = "gamma", tol = 1e-07, maxiters = 100) {
     res <- Rfast2::halfcauchy.mle(x, tol = tol )
   } else if ( distr == "powerlaw" ) {
     res <- Rfast2::powerlaw.mle(x)
+  } else if (distr == "halft" ) {
+    res <- foldedt::halft.mle(x)
+  } else if (distr == "halft1" ) {
+    res <- foldedt::halft1.mle(x)
+  } else if (distr == "foldedt" ) {
+    res <- foldedt::foldedt.mle(x)
   } else if (distr == "wp" ) {
     res <- .wp.mle(x)
   } else if (distr == "be" ) {

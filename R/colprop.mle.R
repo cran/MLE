@@ -85,6 +85,11 @@ colprop.mle <- function(x, distr = "beta", tol = 1e-07, maxiters = 100, parallel
   res
 }
 
-
+.colgarcsine.mle <- function(x) {
+  res <- matrix(NA, dim(x)[2], 2)
+  for ( i in 1:dim(x)[2] )  res[i, ] <- unlist( .garcsine.mle(x[, i]) )
+  colnames(res) <- c("alpha", "loglik")
+  res
+}
 
 
