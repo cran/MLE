@@ -27,6 +27,8 @@ hspher.mle <- function(x, distr = "vmf", ina, full = FALSE, ell = FALSE, tol = 1
      res <- Directional::sespc.mle(x, full = full, tol = tol)
     } else if ( distr == "ESAGd" ) {
       res <- Directional::ESAGd.mle(x, full = full)
+    } else if ( distr == "svmf" ) {
+      res <- svmf::svmf.mle(x, full = full)
    } else if ( distr == "wood" ) {
      res <- Directional::wood.mle(x)
    }

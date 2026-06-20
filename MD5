@@ -1,5 +1,5 @@
-8d334cfbd775ed2b146d65a2e6d3bb01 *DESCRIPTION
-46181755bc90c7486191fe17a7766d6b *NAMESPACE
+7b87d3fe28bbdb031f3b4b3baa25e3d2 *DESCRIPTION
+dca306d4192662a17ad8cf2bfec77cc0 *NAMESPACE
 ed0ec94e736390431283968c06870c17 *R/bell.mle.R
 dfc58210cc2f517cb74c497cdf4c5f6c *R/cens.mle.R
 e9cad239551dbc2110ab943bb3817cc9 *R/circ.mle.R
@@ -12,7 +12,7 @@ d60edd374a2f79a19741b0e5698d2469 *R/coldisc.mle.R
 0b8127ca9df71220f6c7d615071b6b45 *R/colreal.mle.R
 061aaae1670502a39f3fba650c167d9a *R/comp.mle.R
 3c87edc85ced12cb6eef20c7a52d7369 *R/disc.mle.R
-c094d5f8b65e87c68168d082621b9c91 *R/hspher.mle.R
+8b21e7b3de0fe45b47cd6cf3bf064ef2 *R/hspher.mle.R
 2ebb5bc776c64a4821a89ea9e6e84c44 *R/matrix.mle.R
 178de6d5c91ba62e8e0cec25d4012704 *R/mv.mle.R
 4bd82291d882104da9a0a3f003343c8a *R/mvdisc.mle.R
@@ -34,7 +34,7 @@ f31d66192b3ef8fcaad56ea511a15fc4 *man/colprop.mle.Rd
 1a36b79b86c814dba23fc2a4b438b77b *man/colreal.mle.Rd
 ee5da6456126f2749348c27f6855dcc8 *man/comp.mle.Rd
 4fa73cf255a3cf45bd662570f96474c7 *man/disc.mle.Rd
-1ed6cd6a39940b852e4b75710ace4f6c *man/hspher.mle.Rd
+28bb51b5051eed312b733c69eca6846c *man/hspher.mle.Rd
 c8dab9e789097e0bdaf6135374bd2bd9 *man/matrix.mle.Rd
 33d3a1edcb84ec85ff305022db3eef6a *man/mv.mle.Rd
 7b65a662b080bc449494ba6129636b2d *man/mvdisc.mle.Rd
