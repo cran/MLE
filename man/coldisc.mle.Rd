@@ -20,9 +20,13 @@ A numerical matrix with count data, dscrete data, integers. Each column refers t
 \item{distr}{
 The distribution to fit, "poisson" stands for the Poisson, "zip" for the zero-inflated Poisson,
 "ztp" for the zero-truncated Poisson, "negbin" for the negative binomial, "binom" for the binomial,
-"borel" for the Borel distribution, "geom" for the geometric, "logseries" for the log-series distribution, "betageom" for the beta-geometric, "betabinom" for the beta-binomial distribution,
-"skellam" for the Skellam distribution, "gp" for the generalised Poisson distribution,
-"gammapois" for the gamma-Poisson distribution, "cc" for the Cacoullos-Cauchy distribution, "cc0" for the Cacoullos-Cauchy distribution with zero location, "com-pois" for the Conway-Maxwell Poisson (COM-Poisson), and "zicom-pois" for the zero inflated COM-Poisson distribution.n.
+"borel" for the Borel distribution, "geom" for the geometric, "logseries" for the log-series distribution,
+"betageom" for the beta-geometric, "betabinom" for the beta-binomial distribution, "skellam" for the
+Skellam distribution, "gp" for the generalised Poisson distribution, "gammapois" for the gamma-Poisson
+distribution, "cc" for the Cacoullos-Cauchy distribution, "cc0" for the Cacoullos-Cauchy distribution
+with zero location, "com-pois" for the Conway-Maxwell Poisson (COM-Poisson), and "zicom-pois" for the
+zero inflated COM-Poisson distribution. "tppxg" and "tpxg" refer to the two-parameter Poisson Xgamma
+and the two-parameter Xgamma distribution, respectively.
 }
 \item{N}{
 This is for the binomial and the beta binomial distribution only, a vector specifying the total number of trials. If it is NULL in the binomial, it is estimated by the data.

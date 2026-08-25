@@ -41,6 +41,10 @@ disc.mle <- function(x, distr = "poisson", N = NULL, type = 1, tol = 1e-07) {
 	  names(param) <- c("lambda", "nu", "p")
     loglik <- a[[ 11 ]]
 	  res <- list(param = param, loglik = loglik)
+  } else if ( distr == "tppxg" ) {
+    res <- TPXG::tppxg.mle(x)
+  } else if ( distr == "tpxg" ) {
+    res <- TPXG::tpxg.mle(x)
   }
 
   res

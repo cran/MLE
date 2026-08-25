@@ -42,6 +42,8 @@ importFrom("Rfast2", censweibull.mle, censpois.mle, colcensweibull.mle,
            gnormal0.mle, trunccauchy.mle, truncexpmle, kumar.mle, simplex.mle,
            zil.mle, unitweibull.mle, cbern.mle, sp.mle)
 
+importFrom("TPXG", tppxg.mle, tpxg.mle)
+
 importFrom("stats", optim, optimise)
 
 exportPattern("^[[:alpha:]]+")

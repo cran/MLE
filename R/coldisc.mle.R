@@ -33,6 +33,10 @@ coldisc.mle <- function(x, distr = "poisson", N = NULL, type = 1, tol = 1e-7) {
     res <- .colcom_pois.mle(x)
   } else if ( distr == "zicom-pois" ) {
     res <- .colzicom_pois.mle(x)
+  } else if ( distr == "tppxg" ) {
+    res <- .coltppxg.mle(x)
+  } else if ( distr == "tpxg" ) {
+    res <- .coltpxg.mle(x)
   }
   res
 }
@@ -172,6 +176,24 @@ coldisc.mle <- function(x, distr = "poisson", N = NULL, type = 1, tol = 1e-7) {
     a <- COMPoissonReg::glm.cmp(x ~ 1, formula.p = ~1)
     res[i, ] <- c( exp( unlist(a[[ 12 ]]$par) ), a[[ 11 ]] )
   }
-  colnames(res)<-c('lambda', 'nu', 'p', 'loglikelihood')
+  colnames(res) <- c('lambda', 'nu', 'p', 'loglikelihood')
+  res
+}
+
+#---coltppxg.mle----
+.coltppxg.mle <- function(x) {
+  n <- dim(x)[2]
+  res <- matrix(nrow = n, ncol = 3)
+  for ( i in 1:n )  res[i, ] <- TPXG::tppxg.mle(x)
+  colnames(res) <- c('alpha', 'theta', 'loglikelihood')
+  res
+}
+
+#---coltpxg.mle----
+.coltpxg.mle <- function(x) {
+  n <- dim(x)[2]
+  res <- matrix(nrow = n, ncol = 3)
+  for ( i in 1:n )  res[i, ] <- TPXG::tpxg.mle(x)
+  colnames(res) <- c('alpha', 'theta', 'loglikelihood')
   res
 }
